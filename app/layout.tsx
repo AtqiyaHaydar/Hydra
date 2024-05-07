@@ -27,7 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <StarsCanvas />
+          {/* <StarsCanvas /> */}
           {children}
           <Footer />
         </ThemeProvider>

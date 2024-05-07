@@ -18,7 +18,7 @@ const AddTask = () => {
         <DialogTrigger asChild>
           <Button
             variant={"ghost"} 
-            className='text-center w-[275px] flex gap-x-4'
+            className='text-center w-full  md:w-[275px] flex gap-x-4'
           >
             <Plus className='w-5 h-5'/> Add Task
           </Button>
