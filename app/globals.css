@@ -73,4 +73,7 @@
     body {
       @apply bg-background text-foreground;
     }
+    .card-wrapper {
+      @apply border-2 rounded-lg border-white/5 px-4 py-2;
+    }
   }
