@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/theme-provider";
 import StarsCanvas from "@/components/StarBackground";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -28,6 +29,7 @@ export default function RootLayout({
         >
           <StarsCanvas />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
