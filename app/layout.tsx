@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "@/components/theme-provider";
+import StarsCanvas from "@/components/StarBackground";
 
 export default function RootLayout({
   children,
@@ -25,6 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <StarsCanvas />
           {children}
         </ThemeProvider>
       </body>
