@@ -87,4 +87,7 @@
   .font-ethnocentric-italic {
     font-family: 'Ethnocentric-Italic', sans-serif;
   }
+  .wrapper {
+    @apply h-screen mx-auto max-w-7xl p-8;
+  }
 }

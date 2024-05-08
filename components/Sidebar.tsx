@@ -1,15 +1,11 @@
-"use client"
-
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { Button } from './ui/button'
 import NavItems from './NavItems'
+import { LogIn } from 'lucide-react'
 
 const Sidebar = () => {
-  const router = useRouter()
-
   return (
-    <div className='px-4 py-8 fixed left-0 top-0 w-[275px] h-screen border-r border-white/10 flex flex-col items-center gap-20'>
+    <div className='px-4 py-8 fixed left-0 top-0 w-[275px] h-screen border-r border-white/10 flex flex-col items-center bg-dark gap-20'>
       {/* Header */}
       <h1 className='w-full text-center font-bold text-2xl font-ethnocentric'>Hydra</h1>
       
@@ -19,8 +15,8 @@ const Sidebar = () => {
       </div>
 
       {/* Footer */}
-      <Button className='w-[200px]'>
-        Login 
+      <Button className='w-[200px] flex items-center gap-x-2'>
+        Login  <LogIn size={16} />
       </Button>
     </div>
   )

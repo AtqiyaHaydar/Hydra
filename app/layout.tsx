@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
 
 export default function RootLayout({
   children,
@@ -26,7 +27,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Sidebar />
+          <div className="ml-[275px] bg-dark h-screen">
+            {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>
