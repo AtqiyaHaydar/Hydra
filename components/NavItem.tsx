@@ -22,7 +22,7 @@ const NavItem = ({ title, href }: NavItemI) => {
         pathname === "/tasks" && pathname === href && 'bg-gradient-to-r gradient-2',
         pathname === "/projects" && pathname === href && 'bg-gradient-to-r gradient-8',
         pathname === href && "text-white font-bold",
-        'text-center w-[200px]'
+        'text-center w-[200px] transition-all'
       )}
     >
       <Link href={href}>

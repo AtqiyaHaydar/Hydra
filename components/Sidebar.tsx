@@ -15,7 +15,7 @@ const Sidebar = () => {
       </div>
 
       {/* Footer */}
-      <Button className='w-[200px] flex items-center gap-x-2'>
+      <Button className='w-[200px] flex items-center gap-x-2 hover:gap-x-4 transition-all'>
         Login  <LogIn size={16} />
       </Button>
     </div>
