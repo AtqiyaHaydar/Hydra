@@ -66,6 +66,14 @@
   }
 }
 
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url("../public/ethnocentric\ rg.otf");
+
+  font-family: 'Ethnocentric-Italic';
+  src: url("../public/ethnocentric\ rg\ it.otf");
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -73,10 +81,10 @@
   body {
     @apply bg-background text-foreground;
   }
-  .header-wrapper {
-    @apply border-2 rounded-lg border-white/5 px-4 py-2;
+  .font-ethnocentric {
+    font-family: 'Ethnocentric', sans-serif;
   }
-  .card-wrapper {
-    @apply border-2 rounded-lg border-white/5 px-4 py-4;
+  .font-ethnocentric-italic {
+    font-family: 'Ethnocentric-Italic', sans-serif;
   }
 }

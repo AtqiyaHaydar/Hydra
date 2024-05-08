@@ -1,4 +1,4 @@
-## Si Operations
+## Hydra
 
 A Minimalist Project Management Software.
 Created For Operations KSEP '24
