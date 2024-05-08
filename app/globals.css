@@ -90,4 +90,28 @@
   .wrapper {
     @apply h-screen mx-auto max-w-7xl p-8;
   }
+  .gradient-1 {
+    @apply from-[#f42e78] to-[#c17afc]
+  }
+  .gradient-2 {
+    @apply from-[#fec180] to-[#ff8893]
+  }
+  .gradient-3 {
+    @apply from-[#6681ea] to-[#7e43aa]
+  }
+  .gradient-4 {
+    @apply from-[#efbad3] to-[#a254f2]
+  }
+  .gradient-5 {
+    @apply from-[#f3dcfb] to-[#679fe4]
+  }
+  .gradient-6 {
+    @apply from-[#d0ffae] to-[#34ebe9]
+  }
+  .gradient-7 {
+    @apply from-[#ff839d] to-[#f50b9a]
+  }
+  .gradient-8 {
+    @apply from-[#6acbe0] to-[#6859ea]
+  }
 }
