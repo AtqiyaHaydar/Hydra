@@ -21,7 +21,7 @@ const NotificationsCard = ({ date, month, task, project, backgroundColor } : Not
   }
 
   return (
-    <div className={cn('rounded-md flex justify-between pl-3 items-center mr-4 cursor-pointer transition-all duration-500 group group-hover:text-black', backgroundColor)}>
+    <div className={cn('rounded-md flex justify-between pl-3 items-center mr-4 my-3 cursor-pointer transition-all duration-50', backgroundColor)}>
       <div className='w-full bg-dark h-full border flex flex-row items-center justify-between py-4 px-4 rounded-r-md'>
         <div>
           <h1 className='font-bold'>{task}</h1>
