@@ -24,7 +24,7 @@ const tasks = [
     project: "Website PTD"
   },
   {
-    date: 14,
+    date: 17,
     month: 5,
     task: "Tasks Page",
     project: "Website PTD"
@@ -109,7 +109,7 @@ export default function Home() {
                       month={task.month}
                       task={task.task}
                       project={task.project}
-                      backgroundColor={task.date - new Date().getDate() <= 7 ? "bg-gradient-to-r gradient-3" : "bg-gradient-to-l gradient-2"}
+                      backgroundColor={task.date - new Date().getDate() <= 7 ? "bg-gradient-to-l gradient-2" : "bg-gradient-to-r gradient-3"}
                     />
                   </li>
                 ))
@@ -120,7 +120,7 @@ export default function Home() {
                       month={task.month}
                       task={task.task}
                       project={task.project}
-                      backgroundColor={task.date - new Date().getDate() <= 7 ? "bg-gradient-to-r gradient-3" : "bg-gradient-to-l gradient-2"}
+                      backgroundColor={task.date - new Date().getDate() <= 7 ? "bg-gradient-to-l gradient-2" : "bg-gradient-to-r gradient-3"}
                     />
                   </li>
                 ))
