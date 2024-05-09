@@ -72,8 +72,8 @@ export default function Home() {
         />
         <div className="rounded-md border py-4 px-8 w-full min-w-[500px] flex flex-col gap-y-4">
           <h3 className="font-bold text-xl">Your Tasks {date && "Deadline on : " + formatDate(date)} </h3>
-          <ul className="overflow-hidden">
-            <ScrollArea className="overflow-hidden h-[250px]">
+          <ul className="overflow-hidden border-md">
+            <ScrollArea className="overflow-hidden h-[250px] border-md">
             {date !== undefined ? 
               tasks
                 .filter(task => task.date === date.getDate() && task.month === date.getMonth() + 1)
