@@ -48,13 +48,13 @@ const learningResources = [
     title: "Next JS",
     link: "https://www.youtube.com/watch?v=wm5gMKuwSYk&t=1s",
     image: NextJS,
-    className: "gradient-2"
+    className: "gradient-4"
   },
   {
     title: "Auth JS",
     link: "https://www.youtube.com/watch?v=bMYZSi_LZ2w",
     image: AuthJS,
-    className: "gradient-4"
+    className: "gradient-8"
   }, 
   {
     title: "PostgreSQL with Prisma",
