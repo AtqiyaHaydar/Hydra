@@ -1,10 +1,14 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import NotificationsCard from "@/components/NotificationsCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import LearningResourceCard from "@/components/LearningResourceCard";
 
+import NextJS from "@/public/nextjs.svg"
+import AuthJS from "@/public/authjs.png"
+import Prisma from "@/public/prisma.png"
 // Dummy data
 const tasks = [
   {
@@ -36,6 +40,27 @@ const tasks = [
     month: 5,
     task: "Subject Page Design",
     project: "Website PTD"  
+  },
+]
+
+const learningResources = [
+  {
+    title: "Next JS",
+    link: "https://www.youtube.com/watch?v=wm5gMKuwSYk&t=1s",
+    image: NextJS,
+    className: "gradient-2"
+  },
+  {
+    title: "Auth JS",
+    link: "https://www.youtube.com/watch?v=bMYZSi_LZ2w",
+    image: AuthJS,
+    className: "gradient-4"
+  }, 
+  {
+    title: "PostgreSQL with Prisma",
+    link: "https://www.youtube.com/watch?v=gxkwMm_j850",
+    image: Prisma,
+    className: "gradient-7"
   }
 ]
 
@@ -104,6 +129,25 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
+      <div>
+        <h1 className="font-bold text-xl">Learning Resource</h1>
+      </div>
+
+      <ul className="flex flex-row gap-x-4">
+        {learningResources.map((resource, index) => {
+          return (
+            <li key={index}>
+              <LearningResourceCard 
+                title={resource.title}
+                link={resource.link}
+                image={resource.image}
+                className={resource.className}
+              />
+            </li>
+          )
+        })}
+      </ul>
       
     </main>
   );
