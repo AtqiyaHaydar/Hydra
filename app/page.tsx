@@ -6,9 +6,11 @@ import NotificationsCard from "@/components/NotificationsCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import LearningResourceCard from "@/components/LearningResourceCard";
 
+// Import Images
 import NextJS from "@/public/nextjs.svg"
 import AuthJS from "@/public/authjs.png"
 import Prisma from "@/public/prisma.png"
+
 // Dummy data
 const tasks = [
   {
@@ -24,21 +26,39 @@ const tasks = [
     project: "Website PTD"
   },
   {
-    date: 17,
+    date: 12,
     month: 5,
-    task: "Tasks Page",
+    task: "Registration Form",
+    project: "Website INFEST",
+  },
+  {
+    date: 14,
+    month: 5,
+    task: "Registration Page",
     project: "Website PTD"
   },
   {
-    date: 17,
+    date: 14,
     month: 5,
-    task: "Handbook Page",
+    task: "Assigment Page",
     project: "Website PTD"
   },
   {
     date: 20,
     month: 5,
-    task: "Subject Page Design",
+    task: "Tasks Page",
+    project: "Website PTD"
+  },
+  {
+    date: 20,
+    month: 5,
+    task: "Handbook Page",
+    project: "Website PTD"
+  },
+  {
+    date: 24,
+    month: 5,
+    task: "Subject Page",
     project: "Website PTD"  
   },
 ]
@@ -67,6 +87,8 @@ const learningResources = [
 export default function Home() {
   const [date, setDate] = useState<Date | undefined>()
 
+  const today = new Date();
+
   const formatDate = (date: Date | undefined) => {
     if (!date) return null;
   
@@ -84,7 +106,7 @@ export default function Home() {
   return (
     <main className="wrapper space-y-8">
       <div className="space-y-2">
-        <h1 className="font-bold text-2xl">Hello, Atqiya!</h1>
+        <h1 className="font-bold text-2xl">Hello, Atqiya! 👋🏻</h1>
         <p className="font-light">Here's your agenda today</p>
       </div>
 
@@ -96,12 +118,12 @@ export default function Home() {
           className="rounded-md border w-[280px] h-[350px]"
         />
         <div className="rounded-md border py-4 px-8 w-full min-w-[500px] flex flex-col gap-y-4">
-          <h3 className="font-bold text-xl">Your Tasks {date && "Deadline on : " + formatDate(date)} </h3>
+          <h3 className="font-bold text-xl">Your {date ? "Tasks Deadlines on : " + formatDate(date) : "Upcoming Deadline"} </h3>
           <ul className="overflow-hidden border-md">
             <ScrollArea className="overflow-hidden h-[250px] border-md">
             {date !== undefined ? 
               tasks
-                .filter(task => task.date === date.getDate() && task.month === date.getMonth() + 1)
+                .filter(task => task.date === date.getDate() && task.month === date.getMonth() + 1 && task.date - date.getDate() < 7)
                 .map((task, index) => (
                   <li key={index} className="mb-2">
                     <NotificationsCard 
@@ -113,7 +135,9 @@ export default function Home() {
                     />
                   </li>
                 ))
-              : tasks.map((task, index) => (
+              : tasks
+                .filter(task => task.date - today.getDate() < 7)
+                .map((task, index) => (
                   <li key={index} className="mb-2">
                     <NotificationsCard 
                       date={task.date}
