@@ -61,18 +61,16 @@ const tasks = [
   }
 ]
 
-
-
 const Page = () => {
   return (
     <div className='wrapper space-y-8'>
       <div className='space-y-2'>
-        <h1 className='font-bold text-2xl'>Your Tasks</h1>
+        <h1 className='font-bold text-2xl'>Your Tasks 💻</h1>
         <p className='font-light'>Always finish your tasks before deadline 😉</p>
       </div>
 
       <ul>
-        <ScrollArea className='overflow-hidden max-h-[550px] gap-y-4'>
+        <ScrollArea className='overflow-hidden h-[550px] gap-y-4 pr-4'>
           {tasks.map((task, index) => {
             return (
               <li key={index}>
