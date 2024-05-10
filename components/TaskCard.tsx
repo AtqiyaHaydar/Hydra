@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 interface TaskCardI {
   task: string
@@ -8,9 +9,10 @@ interface TaskCardI {
   month: number
   project: string
   description: string
+  status: string
 }
  
-const TaskCard = ({task, date, month, project, description} : TaskCardI) => {
+const TaskCard = ({task, date, month, project, description, status} : TaskCardI) => {
 
   const formatMonth = (month: number) => {
     if (!date) return null;
@@ -32,9 +34,16 @@ const TaskCard = ({task, date, month, project, description} : TaskCardI) => {
             {description}
           </p>
         </div>
-        <Button variant={"secondary"}>
-          {project}
-        </Button>
+        <div className='flex flex-row gap-x-4 items-center'>
+          <Button variant={"secondary"}>
+            {project}
+          </Button>
+          <p className={cn(
+            status === "Finished" ? "text-green-500" : "text-red-500"
+          )}>
+            {status}
+          </p>
+        </div>
       </div>
       <div>
         <p>{date} {formatMonth(month)}</p>
