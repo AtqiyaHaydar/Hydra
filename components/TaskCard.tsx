@@ -27,10 +27,10 @@ const TaskCard = ({task, date, month, project, description, status} : TaskCardI)
 
   return (
     <div className={cn(
-      'my-4 border rounded-xl bg-gradient-to-r',
+      'my-4 border rounded-xl bg-gradient-to-r relative overflow-hidden',
       )}>
       <div className={cn(
-        'flex flex-row justify-between items-center text-dark bg-dark rounded-xl px-8 py-6 bg-gradient-to-r',
+        'overflow-hidden flex flex-row justify-between items-center text-dark bg-dark rounded-xl px-8 py-6 bg-gradient-to-r max-h-[200px]',
         status === "Finished" && "gradient-6",
         status === "Unfinished" && date - new Date().getDate() <= 7 &&  "bg-gradient-to-l gradient-2 text-white",
         status === "Unfinished" && date - new Date().getDate() > 7 &&  "gradient-3 text-white",
@@ -55,7 +55,11 @@ const TaskCard = ({task, date, month, project, description, status} : TaskCardI)
           </div>
         </div>
         <div>
-          <p className='font-medium'>{date} {formatMonth(month)}</p>
+          <p className='font-medium text-dark'>{date} {formatMonth(month)}</p>
+        </div>
+
+        <div className='absolute right-[-75px] bg-white/25 h-[250px] w-[250px] rounded-full'>
+
         </div>
       </div>
     </div>
