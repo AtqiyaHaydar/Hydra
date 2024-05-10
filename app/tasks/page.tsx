@@ -33,7 +33,7 @@ const tasks = [
     "month": 5,
     "project": "Website PTD",
     "description": "The Registration Page is part of the PTD website where users can register for an account. It will guide users through the registration process and capture required information to create their accounts.",
-    "status": "Finished"
+    "status": "Unfinished"
   },
   {
     "task": "Assignment Page",
@@ -41,7 +41,7 @@ const tasks = [
     "month": 5,
     "project": "Website PTD",
     "description": "The Assignment Page is a section of the PTD website dedicated to managing assignments or tasks. It will provide users with features to view, create, and manage assignments efficiently.",
-    "status": "Finished"
+    "status": "Unfinished"
   },
   {
     "task": "Tasks Page",
@@ -73,7 +73,7 @@ const Page = () => {
   return (
     <div className='wrapper space-y-8'>
       <div className='space-y-2'>
-        <h1 className='font-bold text-2xl'>Your Tasks 💻</h1>
+        <h1 className='font-bold text-2xl'>Your Tasks This Month 💻</h1>
         <p className='font-light'>Always finish your tasks before deadline 😉</p>
       </div>
 

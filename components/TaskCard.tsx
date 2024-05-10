@@ -26,27 +26,37 @@ const TaskCard = ({task, date, month, project, description, status} : TaskCardI)
   };
 
   return (
-    <div className='my-4 border py-6 px-8 rounded-xl flex flex-row justify-between items-center'>
-      <div className='space-y-8 max-w-[900px]'>
-        <div className='space-y-2'>
-          <h1 className='text font-bold text-[20px]'>{task}</h1>
-          <p className='font-light text-sm'>
-            {description}
-          </p>
+    <div className={cn(
+      'my-4 border rounded-xl bg-gradient-to-r',
+      )}>
+      <div className={cn(
+        'flex flex-row justify-between items-center text-dark bg-dark rounded-xl px-8 py-6 bg-gradient-to-r',
+        status === "Finished" && "gradient-6",
+        status === "Unfinished" && date - new Date().getDate() <= 7 &&  "bg-gradient-to-l gradient-2 text-white",
+        status === "Unfinished" && date - new Date().getDate() > 7 &&  "gradient-3 text-white",
+      )}>
+        <div className='space-y-8 max-w-[900px]'>
+          <div className='space-y-2'>
+            <h1 className='text font-bold text-[20px]'>{task}</h1>
+            <p className=' text-sm'>
+              {description}
+            </p>
+          </div>
+          <div className='flex flex-row gap-x-4 items-center'>
+            <Button variant={"secondary"}>
+              {project}
+            </Button>
+            <p className={cn(
+              "px-4 py-2.5 bg-white rounded-md text-[14px] font-semibold",
+              status === "Finished" ? "text-green-500" : "text-red-500"
+            )}>
+              {status}
+            </p>
+          </div>
         </div>
-        <div className='flex flex-row gap-x-4 items-center'>
-          <Button variant={"secondary"}>
-            {project}
-          </Button>
-          <p className={cn(
-            status === "Finished" ? "text-green-500" : "text-red-500"
-          )}>
-            {status}
-          </p>
+        <div>
+          <p className='font-medium'>{date} {formatMonth(month)}</p>
         </div>
-      </div>
-      <div>
-        <p>{date} {formatMonth(month)}</p>
       </div>
     </div>
   )
